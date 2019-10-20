@@ -1,25 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Galleries from './components/Galleries'
+
+const spaceId = 'yx8bx9i9yjcr';
+const environment= 'master';
+const accessToken = 'vO2pP2CV19EMDnQH4jsb9ML-vExsLLHaOcBv14qf75Q';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Galleries accessToken={accessToken} spaceId={spaceId} environment={environment} />
   );
 }
 
