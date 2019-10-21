@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GalleryList from './GalleryList';
 import { connect } from 'react-redux'
-import { fetchGalleries } from '../actions'
+import { fetchGalleries } from '../../actions'
 
 class Galleries extends Component {
   componentDidMount() {
@@ -15,16 +15,20 @@ class Galleries extends Component {
 
 const mapStateToProps = state => {
   return {
-    galleryList: state.galleryList,
-    galleries: state.galleries,
-    files: state.files,
+    galleries: state
+      .galleryList
+      .map(id => ({
+        id,
+        picture: state.files[state.galleries[id].coverImage.sys.id].file.url,
+        ...state.galleries[id],
+      })),
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetch: () => {
-      dispatch(fetchGalleries(ownProps.accessToken, ownProps.spaceId, ownProps.environment))
+      dispatch(fetchGalleries(ownProps.deliveryToken, ownProps.spaceId, ownProps.environment))
     }
   }
 }
