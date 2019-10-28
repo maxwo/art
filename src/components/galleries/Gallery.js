@@ -1,21 +1,26 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from "prop-types";
+import { galleryType } from "../../types";
 
-import {galleryType} from '../../types'
-
-const Gallery = ({gallery, onClick}) => {
-  const progressiveJPEGPicture = `${gallery.picture}?fm=jpg&fl=progressive&w=1200&h=800&q=70`
-  const alternativeText = `${gallery.title} cover`
+const Gallery = ({ gallery, onClick }) => {
+  const progressiveJPEGPicture = `${gallery.picture}?fm=jpg&fl=progressive&w=1200&h=800&q=70`;
+  const alternativeText = `${gallery.title} cover`;
   return (
-    <div className="gallery" onClick={onClick}>
+    <div className="gallery" onClick={() => onClick(gallery)}>
       <h2>{gallery.title}</h2>
-      <img src={progressiveJPEGPicture} alt={alternativeText} width="600" height="10" />
-    </div>);
-}
+      <img
+        src={progressiveJPEGPicture}
+        alt={alternativeText}
+        width="600"
+        height="400"
+      />
+    </div>
+  );
+};
 
 Gallery.propTypes = {
   onClick: PropTypes.func.isRequired,
-  gallery: galleryType.isRequired,
-}
+  gallery: galleryType.isRequired
+};
 
 export default Gallery;

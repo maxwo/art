@@ -1,36 +1,45 @@
-import React, { Component } from 'react';
-import GalleryList from './GalleryList';
-import { connect } from 'react-redux'
-import { fetchGalleries } from '../../actions'
+import React, { useEffect } from "react";
+import GalleryList from "./GalleryList";
+import { connect } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { fetchGalleries } from "../../actions";
 
-class Galleries extends Component {
-  componentDidMount() {
-    this.props.fetch();
-  }
-
-  render() {
-    return <GalleryList {...this.props} onClick={() => {}} />;
-  }
-}
+const Galleries = props => {
+  useEffect(props.fetch, []);
+  const history = useHistory();
+  return (
+    <GalleryList
+      {...props}
+      onClick={gallery => history.push(`/gallery/${gallery.slug}`)}
+    />
+  );
+};
 
 const mapStateToProps = state => {
   return {
-    galleries: state
-      .galleryList
-      .map(id => ({
-        id,
-        picture: state.files[state.galleries[id].coverImage.sys.id].file.url,
-        ...state.galleries[id],
-      })),
-  }
-}
+    galleries: state.galleryList.map(id => ({
+      id,
+      picture: state.files[state.galleries[id].coverImage.sys.id].file.url,
+      ...state.galleries[id]
+    }))
+  };
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetch: () => {
-      dispatch(fetchGalleries(ownProps.deliveryToken, ownProps.spaceId, ownProps.environment))
+      dispatch(
+        fetchGalleries(
+          ownProps.deliveryToken,
+          ownProps.spaceId,
+          ownProps.environment
+        )
+      );
     }
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Galleries);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Galleries);
