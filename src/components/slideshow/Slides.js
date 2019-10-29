@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Slide from "./Slide";
-import HighResolutionPicture from "../core/HighResolutionPicture";
 import { photoType, galleryType } from "../../types";
 import showdown from "showdown";
 
@@ -22,7 +21,7 @@ const createColumn = (slideshow, currentColumn, columnCount) => {
 const createHeader = gallery => {
   if (typeof gallery !== "undefined") {
     const coverPicture = gallery.coverPicture;
-    const styles = { backgroundImage: `url(${gallery.coverPicture.url}` };
+    const styles = { backgroundImage: `url(${coverPicture.url}` };
     return (
       <div className="gallery__header" style={styles}>
         <div className="gallery__header__quote">

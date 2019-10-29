@@ -1,11 +1,19 @@
+$background: #f5f5f5;
 $darkest: #111;
 $dark-text: #333;
+$content-text: #555;
 
+$logo-size: 70px;
 $margin-between-pictures: 4em;
 
-@import url("https://fonts.googleapis.com/css?family=Sanchez|Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic|Sanchez|Work+Sans&display=swap");
 
 @import "~bootstrap/scss/bootstrap.scss";
+
+body,
+html {
+  background-color: $background;
+}
 
 .portfolio {
   display: flex;
@@ -13,6 +21,20 @@ $margin-between-pictures: 4em;
   flex-direction: column;
   margin: 0;
   padding: 0;
+}
+
+.b_title {
+  font-family: "Didact Gothic", sans-serif;
+  color: #888;
+  letter-spacing: 0.1em;
+}
+
+.b_faded {
+  opacity: 0.9;
+}
+
+.b_opaque {
+  opacity: 1;
 }
 
 .l_fullscreen {
@@ -26,6 +48,64 @@ $margin-between-pictures: 4em;
 .l_centered {
   align-items: center;
   justify-content: center;
+}
+
+.header {
+  padding: 1em;
+  width: 800px;
+  margin: auto;
+
+  .header__menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    .header__menu__item {
+      list-style-type: none;
+      margin: 0 4em;
+      text-transform: uppercase;
+      font-size: 0.7em;
+      letter-spacing: 0.2em;
+      font-weight: bold;
+      width: 8em;
+    }
+
+    .header__menu__item a {
+      color: $content-text;
+    }
+
+    .header__menu__item a:hover {
+      color: $dark-text;
+    }
+
+    :nth-child(1) {
+      order: 2;
+    }
+    :nth-child(2) {
+      order: 1;
+    }
+    :nth-child(3) {
+      order: 3;
+    }
+  }
+
+  .header__logo img {
+    @extend .b_faded;
+    transition-duration: 0.15s;
+    display: inline-block;
+    width: $logo-size;
+    height: $logo-size;
+  }
+
+  h1 {
+    @extend .b_title;
+    font-size: 1.2em;
+  }
+}
+
+.header:hover .header__logo img {
+  @extend .b_opaque;
 }
 
 .gallery__header {
@@ -60,7 +140,7 @@ $margin-between-pictures: 4em;
     display: block;
     font-size: 1.5em;
     font-family: "Work Sans", sans-serif;
-    color: $dark-text;
+    color: $content-text;
     width: 30%;
   }
 }
