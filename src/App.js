@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const spaceId = "yx8bx9i9yjcr";
 const environment = "master";
+// public token anyway
 const deliveryToken = "vO2pP2CV19EMDnQH4jsb9ML-vExsLLHaOcBv14qf75Q";
 
 function App() {
