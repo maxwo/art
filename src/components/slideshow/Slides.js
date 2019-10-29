@@ -4,6 +4,8 @@ import Slide from "./Slide";
 import { photoType, galleryType } from "../../types";
 import showdown from "showdown";
 
+const converter = new showdown.Converter();
+
 const createColumn = (slideshow, currentColumn, columnCount) => {
   return (
     <div key={currentColumn}>
@@ -21,9 +23,9 @@ const createColumn = (slideshow, currentColumn, columnCount) => {
 const createHeader = gallery => {
   if (typeof gallery !== "undefined") {
     const coverPicture = gallery.coverPicture;
-    const styles = { backgroundImage: `url(${coverPicture.url}` };
+    const backgroundImage = `url(${coverPicture.url}?fm=jpg&fl=progressive&q=100`;
     return (
-      <div className="gallery__header" style={styles}>
+      <div className="gallery__header" style={{ backgroundImage }}>
         <div className="gallery__header__quote">
           <q>{gallery.quote}</q>
         </div>
@@ -36,7 +38,6 @@ const createHeader = gallery => {
 
 const createDescription = gallery => {
   if (typeof gallery !== "undefined") {
-    const converter = new showdown.Converter();
     const htmlDescription = converter.makeHtml(gallery.description);
     return (
       <div className="gallery__description">
@@ -52,9 +53,7 @@ const createDescription = gallery => {
 };
 
 const Slides = ({ slideshow, gallery, onClick }) => {
-  const columns = [0, 1, 2];
-
-  console.log("Gallery INTO Slides", gallery);
+  const columns = Array.from(Array(4), (x, index) => index);
   return (
     <div className="gallery">
       {createHeader(gallery)}
