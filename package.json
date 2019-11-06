@@ -17,7 +17,7 @@
     "react-scroll-horizontal": "^1.6.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "showdown": "^1.9.0"
+    "showdown": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",
