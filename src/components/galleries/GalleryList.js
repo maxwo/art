@@ -5,11 +5,11 @@ import { galleryType } from "../../types";
 
 const GalleryList = ({ galleries, onClick }) => {
   return (
-    <div>
+    <ul className="gallerylist">
       {galleries.map(gallery => (
         <Gallery key={gallery.id} gallery={gallery} onClick={onClick} />
       ))}
-    </div>
+    </ul>
   );
 };
 

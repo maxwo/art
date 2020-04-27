@@ -10,11 +10,9 @@ import ReduxThunk from "redux-thunk";
 const store = createStore(galleryApp, applyMiddleware(ReduxThunk));
 
 ReactDOM.render(
-  <div className="portfolio">
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </div>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 );
 

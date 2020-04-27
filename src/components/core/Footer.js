@@ -1,9 +1,5 @@
 import React from "react";
 
-const Footer = () => (
-  <div className="header" style={{ display: "none" }}>
-    This is the footer
-  </div>
-);
+const Footer = () => <div className="footer">&copy; Maxime Wojtczak</div>;
 
 export default Footer;

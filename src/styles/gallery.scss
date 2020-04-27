@@ -1,0 +1,23 @@
+.gallery__header {
+  @extend .l_fullscreen;
+  border: 2em solid $darkest;
+  flex-direction: column-reverse;
+
+  .gallery__header__quote {
+    align-items: flex-end;
+    font-family: "Sanchez", serif;
+    margin: 1em 1.5em;
+
+    q {
+      padding: 0 0.3em;
+      font-size: 2.5em;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .gallery__header__quote__author {
+      text-align: right;
+      font-size: 0.5em;
+      margin: 1em 1em 1.5em 1em;
+    }
+  }
+}

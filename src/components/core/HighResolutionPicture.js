@@ -13,7 +13,6 @@ const HighResolutionPicture = ({
   const realWidth = width * 2;
   const realHeight = height * 2;
   const progressiveJPEGPicture = `${picture.url}?fm=jpg&fl=progressive&w=${realWidth}&h=${realHeight}&q=${quality}`;
-  console.log(progressiveJPEGPicture);
   return (
     <img src={progressiveJPEGPicture} alt={alt} width={width} height={height} />
   );

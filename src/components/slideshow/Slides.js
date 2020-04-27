@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Slide from "./Slide";
 import { photoType, galleryType } from "../../types";
+import FadingComponent from "../core/FadingComponent";
+import Lightbox from "react-lightbox-component";
 import showdown from "showdown";
 
 const converter = new showdown.Converter();
@@ -25,11 +27,13 @@ const createHeader = gallery => {
     const coverPicture = gallery.coverPicture;
     const backgroundImage = `url(${coverPicture.url}?fm=jpg&fl=progressive&q=100`;
     return (
-      <div className="gallery__header" style={{ backgroundImage }}>
-        <div className="gallery__header__quote">
-          <q>{gallery.quote}</q>
+      <FadingComponent>
+        <div className="gallery__header" style={{ backgroundImage }}>
+          <div className="gallery__header__quote">
+            <q>{gallery.quote}</q>
+          </div>
         </div>
-      </div>
+      </FadingComponent>
     );
   } else {
     return <div />;
@@ -53,7 +57,12 @@ const createDescription = gallery => {
 };
 
 const Slides = ({ slideshow, gallery, onClick }) => {
-  const columns = Array.from(Array(4), (x, index) => index);
+  const columns = Array.from(Array(3), (x, index) => index);
+  const images = slideshow.map(entry => ({
+    src: entry.url,
+    title: "title",
+    description: "description"
+  }));
   return (
     <div className="gallery">
       {createHeader(gallery)}

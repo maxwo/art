@@ -4,20 +4,25 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.5.2",
+    "@n8tb1t/use-scroll-position": "^1.0.40",
     "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
+    "fslightbox-react": "^1.4.3",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "node-sass": "^4.13.0",
     "prettier": "^1.18.2",
-    "react-dom": "^16.11.0",
     "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-image-lightbox": "^5.1.1",
+    "react-lightbox-component": "^1.2.1",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "react-scroll-horizontal": "^1.6.2",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0",
-    "showdown": "^1.9.0"
+    "showdown": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",

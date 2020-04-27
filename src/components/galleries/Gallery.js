@@ -4,17 +4,12 @@ import { galleryType } from "../../types";
 
 const Gallery = ({ gallery, onClick }) => {
   const progressiveJPEGPicture = `${gallery.picture}?fm=jpg&fl=progressive&w=1200&h=800&q=70`;
-  const alternativeText = `${gallery.title} cover`;
+  const backgroundImage = `url(${progressiveJPEGPicture}`;
   return (
-    <div className="gallery" onClick={() => onClick(gallery)}>
-      <h2>{gallery.title}</h2>
-      <img
-        src={progressiveJPEGPicture}
-        alt={alternativeText}
-        width="600"
-        height="400"
-      />
-    </div>
+    <li className="gallerylist__gallery" onClick={() => onClick(gallery)}>
+      <img src={progressiveJPEGPicture} />
+      <h2 className="gallerylist__gallery__title">{gallery.title}</h2>
+    </li>
   );
 };
 

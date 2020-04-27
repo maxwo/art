@@ -19,7 +19,7 @@ const mapStateToProps = state => {
   return {
     galleries: state.galleryList.map(id => ({
       id,
-      picture: state.files[state.galleries[id].coverImage.sys.id].file.url,
+      picture: state.files[state.galleries[id].galleryImage.sys.id].file.url,
       ...state.galleries[id]
     }))
   };
