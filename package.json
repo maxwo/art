@@ -12,7 +12,7 @@
     "lint-staged": "^9.4.2",
     "node-sass": "^4.13.0",
     "prettier": "^2.0.5",
-    "react": "^16.11.0",
+    "react": "^16.13.1",
     "react-dom": "^16.11.0",
     "react-image-lightbox": "^5.1.1",
     "react-lightbox-component": "^1.2.1",
