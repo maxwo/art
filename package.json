@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.12",
-    "@n8tb1t/use-scroll-position": "^1.0.40",
+    "@n8tb1t/use-scroll-position": "^1.0.43",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "fslightbox-react": "^1.4.9",
