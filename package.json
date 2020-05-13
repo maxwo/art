@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@n8tb1t/use-scroll-position": "^1.0.43",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.5.0",
     "classnames": "^2.2.6",
     "fslightbox-react": "^1.4.9",
     "husky": "^3.0.9",
