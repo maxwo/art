@@ -10,7 +10,7 @@
     "fslightbox-react": "^1.4.9",
     "husky": "^3.0.9",
     "lint-staged": "^10.2.2",
-    "node-sass": "^4.14.0",
+    "node-sass": "^6.0.0",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.11.0",
